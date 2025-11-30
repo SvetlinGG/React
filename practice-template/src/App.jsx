@@ -2,7 +2,6 @@
 import Navbar from '../component/Navbar';
 import Header from '../component/Header';
 import Modal from '../component/Modal';
-import './App.css'
 import BannerHero from '../component/BannerHero';
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
 
   return (
     <>
-     <>
   <Navbar />
   {/* Close Top Nav */}
   {/* Header */}
@@ -373,8 +371,6 @@ function App() {
       </div>
     </div>
   </footer>
-</>
-
     </>
   )
 }
