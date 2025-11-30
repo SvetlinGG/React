@@ -3,6 +3,7 @@ import Navbar from '../component/Navbar';
 import Header from '../component/Header';
 import Modal from '../component/Modal';
 import './App.css'
+import BannerHero from '../component/BannerHero';
 
 function App() {
   
@@ -18,7 +19,7 @@ function App() {
   {/* Modal */}
   <Modal />
   {/* Start Banner Hero */}
-  
+  <BannerHero />
   {/* End Banner Hero */}
   {/* Start Categories of The Month */}
   <section className="container py-5">
