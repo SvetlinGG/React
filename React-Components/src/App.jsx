@@ -1,4 +1,5 @@
 import Component from "./Component"
+import MovieList from "./MovieList"
 
 function App() {
  
@@ -6,6 +7,8 @@ function App() {
   return (
     <main>
       <Component />
+      <hr />
+      <MovieList />
     </main>
   )
 }
