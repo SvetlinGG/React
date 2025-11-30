@@ -28,7 +28,7 @@ export default function BannerHero(){
             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
               <img
                 className="img-fluid"
-                src="./assets/img/banner_img_01.jpg"
+                src="../src/assets/img/banner_img_01.jpg"
                 alt=""
               />
             </div>
@@ -90,7 +90,7 @@ export default function BannerHero(){
             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
               <img
                 className="img-fluid"
-                src="./assets/img/banner_img_02.jpg"
+                src="../src/assets/img/banner_img_02.jpg"
                 alt=""
               />
             </div>
@@ -115,7 +115,7 @@ export default function BannerHero(){
             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
               <img
                 className="img-fluid"
-                src="./assets/img/banner_img_03.jpg"
+                src="../src/assets/img/banner_img_03.jpg"
                 alt=""
               />
             </div>
