@@ -1,8 +1,9 @@
 
 
-export default function MovieListItem(){
-
+export default function MovieListItem(props){
+    console.log(props);
+    
     return (
-        <li>Iron Man</li>
+        <li style={{fontWeight: 'bold', color: 'red', border: '2px solid blue'}}>{props.title} - ({props.year})</li>
     )
 }
