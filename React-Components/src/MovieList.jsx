@@ -2,6 +2,7 @@ import MovieListItem from "./MovieListItem";
 
 
 export default function MovieList(){
+    
 
     return (
         <>
