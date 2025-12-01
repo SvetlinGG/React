@@ -1,4 +1,5 @@
-import GameListItem from '../src/GameListItem'
+import GameListItem from '../src/GameListItem';
+
 export default function GameList(){
 
     return (
