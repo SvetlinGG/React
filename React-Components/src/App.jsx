@@ -1,3 +1,4 @@
+import AdvancedCounter from "./AdvancedCounter"
 import Children from "./Children"
 import Component from "./Component"
 import Counter from "./Counter"
@@ -27,6 +28,9 @@ function App() {
       <hr />
 
       <Counter />
+
+      <hr />
+      <AdvancedCounter />
     </main>
   )
 }
