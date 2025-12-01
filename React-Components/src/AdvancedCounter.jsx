@@ -11,6 +11,15 @@ export default function AdvancedCounter(){
 
     const hideCounterHandler = () => {
         setShow(!show);
+    };
+
+    if ( counter > 10){
+        return (
+        <>
+            <h2>Max Counter</h2>
+            <button onClick={()=> setCounter(0)}>Reset</button>
+        </>
+        );
     }
 
     return (
@@ -20,8 +29,8 @@ export default function AdvancedCounter(){
         {show
             ?(
                 <div>
-                    <button onClick={buttonClickHandler}>Click Me</button>
-                    <button onClick={hideCounterHandler}>Hide Counter</button>
+                    <p>Counter: {counter}</p>
+                    <button onClick={hideCounterHandler}>Counter</button>
                 </div>
             )
             : <p>Counter is Hidden</p>
