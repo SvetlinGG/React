@@ -5,12 +5,12 @@ export default function AdvancedCounter(){
     const [counter, setCounter] = useState(0);
 
     const buttonClickHandler = ()=> {
-        setCounter(counter + 1)
+        setCounter(oldState => oldState + 1)
         
-    }
+    };
 
     const hideCounterHandler = () => {
-        setShow(!show);
+        setShow(state => !state);
     };
 
     if ( counter > 10){
@@ -21,22 +21,26 @@ export default function AdvancedCounter(){
         </>
         );
     }
+    const counterElement = (
+        <div>
+            <div>
+                    <p>Counter: {counter}</p>
+                    <button onClick={buttonClickHandler}>Counter</button>
+                </div>
+        </div>
+    )
 
     return (
         <>
         <h2>Advanced Counter</h2>
 
         {show
-            ?(
-                <div>
-                    <p>Counter: {counter}</p>
-                    <button onClick={hideCounterHandler}>Counter</button>
-                </div>
-            )
+            ? counterElement
             : <p>Counter is Hidden</p>
         }
+        {counter < 5 &&
         <button onClick={hideCounterHandler}>{show ? 'Hide' : 'Show'} Counter</button>
-
+        }
         
         </>
     );
