@@ -13,9 +13,11 @@ export default function MovieList(){
    
 
     const addButtonHandler = () => {
-        setMovies([
-            {title: 'Amazing Grace', year: 2020}
-        ])
+        setMovies( oldState => [
+            ...oldState, {title: 'Amazing Grace', year: 2020}
+        ]
+            //{title: 'Amazing Grace', year: 2020}
+        )
     }
 
     return (
