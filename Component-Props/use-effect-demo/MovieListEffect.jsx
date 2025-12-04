@@ -1,7 +1,8 @@
 import { useState } from "react";
 import MovieListItemEffect from "./MovieListItemEffect";
 
-export default function MovieListEffect(){
+export default function MovieListEffect(0){
+    const [count, setCount] = useState();
 
     const [movies, setMovies] = useState([
         {id: 1, title: 'Iron Man', year: 2020},
@@ -10,7 +11,9 @@ export default function MovieListEffect(){
         {id: 4, title: 'The Case for Christ', year: 2001},
     ]);
 
-   
+    const counterClickHandler = () => {
+        setCount(state => state + 1)
+    }
 
     const addButtonHandler = () => {
         setMovies( oldState => [
@@ -26,7 +29,9 @@ export default function MovieListEffect(){
         <ul>
             {movies.map( movie => <MovieListItemEffect key={movie.id} title={movie.title} year={movie.year}/>)}
         </ul>
+        <p>Count: {count}</p>
         <button onClick={addButtonHandler}>Add</button>
+        <button onClick={counterClickHandler}>+</button>
 
 
         </>
