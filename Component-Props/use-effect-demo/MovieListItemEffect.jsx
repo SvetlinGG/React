@@ -6,9 +6,9 @@ export default function MovieListItemEffect({
     year,
 }){
     useEffect(()=> {
-        console.log('Render');
+        console.log('On Mount');
         
-    });
+    },[]);
 
     return (
         <li style={{fontWeight: 'bold'}}>{title} - ({year})</li>
