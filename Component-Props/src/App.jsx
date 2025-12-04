@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import MovieList from './render-list-demo/MovieList'
+import MovieListItemEffect from '../use-effect-demo/MovieListItemEffect'
+import MovieListEffect from '../use-effect-demo/MovieListEffect'
 
 function App() {
   
 
   return (
     <main>
-    <MovieList />
+    <MovieListEffect />
+    <hr />
+    
+    <MovieListItemEffect />
     </main>
   )
 }
