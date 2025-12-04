@@ -24,13 +24,22 @@ export default function MovieListEffect(){
             ...oldState,
         ]);
     }
+    const deleteMovieHandler = (movieId) => {
+        // to do delete movie by id
+        console.log(movieId);
+        
+        console.log('delete by id');
+
+        setMovies(oldState => oldState.filter(movie => movie.id !== movieId))
+        
+    }
 
     return (
         <>
         <h2>Movie List Effect</h2>
 
         <ul>
-            {movies.map( movie => <MovieListItemEffect key={movie.id} title={movie.title} year={movie.year}/>)}
+            {movies.map( movie => <MovieListItemEffect key={movie.id} id={movie.id} title={movie.title} year={movie.year} onDelete={deleteMovieHandler}/>)}
         </ul>
         
         <button onClick={addButtonHandler}>Add</button>
