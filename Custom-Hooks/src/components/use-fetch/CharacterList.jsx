@@ -5,11 +5,18 @@ export default function CharacterList(){
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
-        fetch('https://swapi.dev/api/people')
+        const abortController = new AbortController();
+
+
+        fetch('https://swapi.dev/api/people', {signal: abortController.signal})
             .then(res => res.json())
             .then(result => {
                 setCharacters(result.results)
     });
+
+    return () => {
+        abortController.abort();
+    }
     },[])
 
     
