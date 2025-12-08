@@ -10,8 +10,12 @@ export default function Gallery(){
     }
 
     useEffect(() => {
-        window.addEventListener('keypress', onKeyDownHandler)
-    }, [])
+        window.addEventListener('keypress', onKeyDownHandler);
+
+        return () => {
+            window.removeEventListener('keypress', onKeyDownHandler)
+        }
+    }, []);
 
     return (
         <>
