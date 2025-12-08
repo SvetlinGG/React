@@ -1,9 +1,12 @@
 
 import useCharacters from "./useCharacters";
+import useFetch from "./useFetch";
 
 export default function CharacterList(){
 
-    const [characters] = useCharacters([])
+    //const [characters] = useCharacters([]);
+
+    const [characters, setCharacters] = useFetch('https://swapi.dev/api/people', []);
     return (
 
         <>
