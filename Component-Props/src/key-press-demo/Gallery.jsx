@@ -1,11 +1,17 @@
+import { useEffect } from "react";
+
 export default function Gallery(){
 
     const onKeyDownHandler = (e)=> {
-        console.log(e);
+        console.log(e.key);
         console.log('Key down');
         
         
     }
+
+    useEffect(() => {
+        window.addEventListener('keypress', onKeyDownHandler)
+    }, [])
 
     return (
         <>
