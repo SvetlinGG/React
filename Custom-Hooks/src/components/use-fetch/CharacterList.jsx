@@ -6,7 +6,7 @@ export default function CharacterList(){
 
     //const [characters] = useCharacters([]);
 
-    const [characters, setCharacters] = useFetch('https://swapi.dev/api/people', []);
+    const [characters, setCharacters] = useFetch('https://swapi.dev/api/people', [], data => data.results);
     return (
 
         <>
