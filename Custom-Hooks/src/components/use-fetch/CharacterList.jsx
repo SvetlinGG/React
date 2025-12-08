@@ -17,7 +17,7 @@ export default function CharacterList(){
     return (
 
         <>
-        <h2>Character List (fetch-demo)</h2>
+        <h2>Character List - useFetch demo</h2>
 
         <ul>
             {characters.map(character => <li key={character.name}>{character.name}</li>)}
