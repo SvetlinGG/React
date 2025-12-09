@@ -45,11 +45,21 @@ const containerStyle = {
 
 export default function Login(){
 
-    const submitHandler
+    const submitHandler = (e) => {
+        // Stop page refresh
+        e.preventDefault();
+
+        // Get data from form
+
+        const formData = new FormData(e.target);
+
+        // Get values from form data
+        const email = formData.get('email');
+    }
 
     return (
         <div style={containerStyle}>
-      <form style={cardStyle} >
+      <form style={cardStyle} onSubmit={(submitHandler)} >
         <h2 style={titleStyle}>Login</h2>
 
         <input
