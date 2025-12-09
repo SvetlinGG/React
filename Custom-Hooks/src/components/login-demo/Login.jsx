@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const containerStyle = {
     minHeight: "100vh",
     display: "flex",
@@ -45,6 +47,8 @@ const containerStyle = {
 
 export default function Login(){
 
+    const [user, setUser] = useState(null);
+
     const submitHandler = (e) => {
         // Stop page refresh
         e.preventDefault();
@@ -55,13 +59,22 @@ export default function Login(){
 
         // Get values from form data
         const email = formData.get('email');
-        const pass = formData.get('password');
+        const password = formData.get('password');
         console.log(email);
-        console.log(pass);
+        console.log(password);
         
+        setUser({
+            email,
+            password
+        })
     }
 
     return (
+        <>
+        {user
+                ? <p>You are logged in with {user.email}</p>
+                : <p>Welcome guest!</p>
+        }
         <div style={containerStyle}>
       <form style={cardStyle} onSubmit={(submitHandler)} >
         <h2 style={titleStyle}>Login</h2>
@@ -89,5 +102,6 @@ export default function Login(){
         </button>
       </form>
     </div>
+    </>
     )
 }
