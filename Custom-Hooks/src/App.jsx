@@ -1,5 +1,6 @@
 import CharacterList from './components/use-fetch/CharacterList'
 import './App.css'
+import Login from './components/login-demo/Login'
 
 function App() {
   
@@ -10,6 +11,8 @@ function App() {
      <hr />
 
      <CharacterList />
+     <hr />
+     <Login />
     </>
   )
 }

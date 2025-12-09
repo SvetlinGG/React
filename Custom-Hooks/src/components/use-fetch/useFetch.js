@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function useFetch(url, initialState, transform = data => data ){
     const [data, setData] = useState(initialState);
 
-
+    // ToDo Fix transform dependency bug
     useEffect(() => {
         fetch(url)
         .then(res => res.json())
