@@ -18,15 +18,15 @@ function App() {
   
 
   return (
-    <>
+    <UserContext.Provider value={{user, loginHandler}}>
      <h1>React Hooks</h1>
-     <Header user={user} />
+     <Header />
      <hr />
 
      <CharacterList />
      <hr />
-     <Login onLogin={loginHandler} user={user} />
-    </>
+     <Login />
+    </UserContext.Provider>
   )
 }
 

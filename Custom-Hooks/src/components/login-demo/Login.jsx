@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext} from '../../contexts/UserContext'
 
 const containerStyle = {
     minHeight: "100vh",
@@ -45,12 +46,9 @@ const containerStyle = {
     cursor: "pointer",
   };
 
-export default function Login({
-    user,
-    onLogin,
-}){
+export default function Login(){
 
-    
+    const {user, loginHandler} = useContext(UserContext);
 
     const submitHandler = (e) => {
         // Stop page refresh
@@ -65,7 +63,7 @@ export default function Login({
         const password = formData.get('password');
 
         // Call login handler
-        onLogin(email, password)
+        loginHandler(email, password)
 
         // Clean up form
         e.target.reset();
