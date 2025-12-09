@@ -66,7 +66,10 @@ export default function Login(){
         setUser({
             email,
             password
-        })
+        });
+
+        // Clean up form
+        e.target.reset();
     }
 
     return (
