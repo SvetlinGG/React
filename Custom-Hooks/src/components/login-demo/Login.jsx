@@ -46,6 +46,7 @@ const containerStyle = {
   };
 
 export default function Login({
+    user,
     onLogin,
 }){
 
@@ -62,7 +63,7 @@ export default function Login({
         // Get values from form data
         const email = formData.get('email');
         const password = formData.get('password');
-        
+
         // Call login handler
         onLogin(email, password)
 

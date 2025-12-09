@@ -11,7 +11,8 @@ function App() {
   const loginHandler = (email, password ) => {
     setUser({
       email,
-      password
+      password,
+
     })
   }
   
@@ -19,12 +20,12 @@ function App() {
   return (
     <>
      <h1>React Hooks</h1>
-     <Header />
+     <Header user={user} />
      <hr />
 
      <CharacterList />
      <hr />
-     <Login onLogin={loginHandler} />
+     <Login onLogin={loginHandler} user={user} />
     </>
   )
 }
