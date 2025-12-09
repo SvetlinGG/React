@@ -45,9 +45,11 @@ const containerStyle = {
     cursor: "pointer",
   };
 
-export default function Login(){
+export default function Login({
+    onLogin,
+}){
 
-    const [user, setUser] = useState(null);
+    
 
     const submitHandler = (e) => {
         // Stop page refresh
@@ -60,13 +62,9 @@ export default function Login(){
         // Get values from form data
         const email = formData.get('email');
         const password = formData.get('password');
-        console.log(email);
-        console.log(password);
         
-        setUser({
-            email,
-            password
-        });
+        // Call login handler
+        onLogin(email, password)
 
         // Clean up form
         e.target.reset();
