@@ -55,6 +55,10 @@ export default function Login(){
 
         // Get values from form data
         const email = formData.get('email');
+        const pass = formData.get('password');
+        console.log(email);
+        console.log(pass);
+        
     }
 
     return (
@@ -64,6 +68,7 @@ export default function Login(){
 
         <input
           type="email"
+          id='email'
           name="email"
           placeholder="Email"
           style={inputStyle}
@@ -71,6 +76,7 @@ export default function Login(){
         />
 
         <input
+          id='password'
           type="password"
           name="password"
           placeholder="Password"
