@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext} from '../../contexts/UserContext'
 
 const containerStyle = {
@@ -46,9 +46,13 @@ const containerStyle = {
     cursor: "pointer",
   };
 
-export default function Login(){
+export default function ControlledLogin(){
 
-    const {user, loginHandler} = useContext(UserContext);
+    const {loginHandler} = useContext(UserContext);
+    const [formValues, setFormValues] = useState({
+        email: '',
+        password: ''
+    })
 
     const submitHandler = (e) => {
         // Stop page refresh
@@ -69,20 +73,27 @@ export default function Login(){
         e.target.reset();
     }
 
+    const emailChangeHandler =(e) => {
+        console.log();
+        setFormValues({
+            email: e.target.value,
+            password: e.target.value
+        })
+        
+    }
+
     return (
         <>
-        {user
-                ? <p>You are logged in with {user.email}</p>
-                : <p>Welcome guest!</p>
-        }
         <div style={containerStyle}>
-      <form style={cardStyle} onSubmit={(submitHandler)} >
-        <h2 style={titleStyle}>Login</h2>
+            <form style={cardStyle} onSubmit={(submitHandler)} >
+                <h2 style={titleStyle}>Login</h2>
 
         <input
           type="email"
           id='email'
           name="email"
+          value={formValues.email}
+          onChange={emailChangeHandler}
           placeholder="Email"
           style={inputStyle}
           required
@@ -92,6 +103,8 @@ export default function Login(){
           id='password'
           type="password"
           name="password"
+          value={formValues.password}
+          onChange={emailChangeHandler}
           placeholder="Password"
           style={inputStyle}
           required

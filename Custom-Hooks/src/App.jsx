@@ -2,6 +2,7 @@ import CharacterList from './components/use-fetch/CharacterList'
 import './App.css'
 import Login from './components/login-demo/Login'
 import Header from './components/header/Header'
+import ControlledLogin from './components/controlled-login-demo/ControlledLogin'
 import { useState } from 'react';
 import { UserContext } from './contexts/UserContext';
 
@@ -27,6 +28,8 @@ function App() {
      <CharacterList />
      <hr />
      <Login />
+     <hr />
+     <ControlledLogin />
     </UserContext.Provider>
   )
 }
