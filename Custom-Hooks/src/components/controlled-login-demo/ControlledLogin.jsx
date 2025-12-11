@@ -54,7 +54,7 @@ export default function ControlledLogin(){
     }
 
     const {loginHandler} = useContext(UserContext);
-    const [formValues, setFormValues] = useState()
+    const [formValues, setFormValues] = useState(initialFormValues)
 
     const submitHandler = (e) => {
         // Stop page refresh
