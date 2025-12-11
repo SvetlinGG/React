@@ -74,19 +74,24 @@ export default function ControlledLogin(){
     }
 
     const emailChangeHandler =(e) => {
-        console.log();
-        setFormValues({
+        setFormValues( state => ({
+            ...state,
             email: e.target.value,
-            password: e.target.value
-        })
-        
+        }))
     }
 
+    const passwordChangeHandler = (e) => {
+        setFormValues( state => ({
+            ...state,
+            password: e.target.value,
+        }))
+    }
+ 
     return (
         <>
         <div style={containerStyle}>
             <form style={cardStyle} onSubmit={(submitHandler)} >
-                <h2 style={titleStyle}>Login</h2>
+                <h2 style={titleStyle}>Controlled Login</h2>
 
         <input
           type="email"
@@ -104,7 +109,7 @@ export default function ControlledLogin(){
           type="password"
           name="password"
           value={formValues.password}
-          onChange={emailChangeHandler}
+          onChange={passwordChangeHandler}
           placeholder="Password"
           style={inputStyle}
           required
