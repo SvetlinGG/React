@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext} from '../../contexts/UserContext'
 
 const containerStyle = {
-    minHeight: "100vh",
+    minHeight: "40vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -48,42 +48,43 @@ const containerStyle = {
 
 export default function ControlledLogin(){
 
-    const {loginHandler} = useContext(UserContext);
-    const [formValues, setFormValues] = useState({
+    const initialFormValues = {
         email: '',
         password: ''
-    })
+    }
+
+    const {loginHandler} = useContext(UserContext);
+    const [formValues, setFormValues] = useState()
 
     const submitHandler = (e) => {
         // Stop page refresh
         e.preventDefault();
 
-        // Get data from form
-
-        const formData = new FormData(e.target);
-
-        // Get values from form data
-        const email = formData.get('email');
-        const password = formData.get('password');
-
         // Call login handler
-        loginHandler(email, password)
+        loginHandler(formValues.email, formValues.password)
 
         // Clean up form
-        e.target.reset();
+        setFormValues(initialFormValues);
     }
 
-    const emailChangeHandler =(e) => {
-        setFormValues( state => ({
-            ...state,
-            email: e.target.value,
-        }))
-    }
+    // const emailChangeHandler =(e) => {
+    //     setFormValues( state => ({
+    //         ...state,
+    //         email: e.target.value,
+    //     }))
+    // }
 
-    const passwordChangeHandler = (e) => {
+    // const passwordChangeHandler = (e) => {
+    //     setFormValues( state => ({
+    //         ...state,
+    //         password: e.target.value,
+    //     }))
+    // }
+
+    const changeHandler = (e) => {
         setFormValues( state => ({
             ...state,
-            password: e.target.value,
+            [e.target.name]: e.target.value
         }))
     }
  
@@ -98,7 +99,7 @@ export default function ControlledLogin(){
           id='email'
           name="email"
           value={formValues.email}
-          onChange={emailChangeHandler}
+          onChange={changeHandler}
           placeholder="Email"
           style={inputStyle}
           required
@@ -109,7 +110,7 @@ export default function ControlledLogin(){
           type="password"
           name="password"
           value={formValues.password}
-          onChange={passwordChangeHandler}
+          onChange={changeHandler}
           placeholder="Password"
           style={inputStyle}
           required

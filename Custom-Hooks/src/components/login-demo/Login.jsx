@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UserContext} from '../../contexts/UserContext'
 
 const containerStyle = {
-    minHeight: "100vh",
+    minHeight: "40vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
