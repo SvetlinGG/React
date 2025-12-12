@@ -13,11 +13,11 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Home />} />
       </Routes>
 
 
-     <Home />
+     
      </div>
      
   )
