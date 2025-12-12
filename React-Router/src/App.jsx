@@ -12,6 +12,10 @@ function App() {
     <div className="bg-white">
       <Header />
 
+      <Routes>
+        
+      </Routes>
+
 
      <Home />
      </div>
