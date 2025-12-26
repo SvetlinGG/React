@@ -1,14 +1,17 @@
 
 import './App.css'
 import Component from './components/Component'
+import MovieList from './components/MovieList'
 
 function App() {
   
 
   return (
     <>
-      <h1>How are you today</h1>
       <Component />
+      <hr />
+
+      <MovieList />
     </>
   )
 }
