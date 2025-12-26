@@ -2,6 +2,7 @@
 import './App.css'
 import Component from './components/Component'
 import MovieList from './components/MovieList'
+import Timer from './components/Timer'
 
 function App() {
   
@@ -12,6 +13,8 @@ function App() {
       <hr />
 
       <MovieList />
+      <hr />
+      <Timer />
     </>
   )
 }

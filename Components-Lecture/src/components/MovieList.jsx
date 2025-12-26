@@ -1,3 +1,4 @@
+import MovieListItem from "./MovieListItem";
 
 
 export default function MovieList(){
@@ -6,9 +7,9 @@ export default function MovieList(){
         <h2>Movie List</h2>
 
         <ul>
-            <li>Man of Steel</li>
-            <li>The Matrix</li>
-            <li>Lord of the Rings</li>
+            <MovieListItem title="Man of Steel" year="2003" />
+            <MovieListItem title="The Matrix" year="2017" />
+            <MovieListItem title="Lord of the Rings" year="2008" />
         </ul>
         </>
     )
