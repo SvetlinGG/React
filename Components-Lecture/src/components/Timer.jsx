@@ -4,7 +4,7 @@ export default function Timer(){
 
     const [time, setTime] = useState(0)
 
-    setInterval(() =>{
+    setTimeout(() =>{
         setTime(time + 1)
     },1000)
 
