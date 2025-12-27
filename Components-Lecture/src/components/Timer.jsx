@@ -6,7 +6,7 @@ export default function Timer(){
 
     setTimeout(() =>{
         setTime(time + 1)
-    },1000)
+    },9000)
 
     return (
         <>
