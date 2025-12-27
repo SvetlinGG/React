@@ -31,7 +31,7 @@ export default function AdvancedCounter(){
 
 
         
-        <button onClick={hideClickHandler}>{show ? 'Hide' : 'Show'} Counter</button>
+         {counter < 5 && <button onClick={hideClickHandler}>{show ? 'Hide' : 'Show'} Counter</button>}
         </>
     )
 
