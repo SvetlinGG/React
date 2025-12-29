@@ -1,8 +1,11 @@
 
-export default function MovieListItem(props){
-    console.log(props);
+export default function MovieListItem({
+    title,
+    year,
+}){
+   
     
     return (
-        <li style={{fontWeight: 'bold', color: 'red', border: '2px solid blue'}}>{props.title} - ({props.year})</li>
+        <li style={{fontWeight: 'bold', color: 'red', border: '2px solid blue'}}>{title} - ({year})</li>
     )
 }
