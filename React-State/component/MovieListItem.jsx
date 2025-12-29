@@ -1,11 +1,12 @@
+import { useState } from "react"
 
 export default function MovieListItem({
     title,
     year,
 }){
    
-    
+    const [ movies, setMovies] = useState([])
     return (
-        <li style={{fontWeight: 'bold', color: 'red', border: '2px solid blue'}}>{title} - ({year})</li>
+        <li style={{fontWeight: 'bold', color: 'blue'}}>{title} - ({year})</li>
     )
 }
