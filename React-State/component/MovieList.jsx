@@ -15,12 +15,12 @@ export default function MovieList(){
 
     const addButtonHandler = () => {
           setMovies(oldState => {
-            let newState = [];
-            newState.push(...oldState);
-            newState.push({id: 5, title: "Amazing Grace", year: '2009'});
-
+            let newState = [
+                ...oldState, 
+                {id: 5, title: "Amazing Grace", year: '2009'}
+            ];
             return newState;
-          })
+          });
     }
     return (
         <>
