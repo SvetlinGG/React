@@ -1,3 +1,4 @@
+import MovieList from "../components/MovieList"
 
 
 function App() {
@@ -5,7 +6,8 @@ function App() {
 
   return (
     <>
-      <h1>Hello React State</h1>
+      <MovieList />
+
     </>
   )
 }
